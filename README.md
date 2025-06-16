@@ -8,28 +8,20 @@ numpy
 Execução local
 Instale as dependências:
 
-bash
-Copiar
-Editar
+
 pip install -r requirements.txt
 Execute o script:
 
-bash
-Copiar
-Editar
+
 python kdtree.py
 Execução com Docker
 Construa a imagem:
 
-bash
-Copiar
-Editar
+
 docker build -t kdtree-benchmark .
 Execute o container:
 
-bash
-Copiar
-Editar
+
 docker run --rm -v ${PWD}:/app kdtree-benchmark
 Os arquivos de saída speed.txt e grafico_kdtree.png serão salvos no diretório local.
 
