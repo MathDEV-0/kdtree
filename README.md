@@ -9,7 +9,7 @@ Este projeto realiza testes de desempenho de buscas em uma KdTree balanceada em 
 - Python 3.10+
 - matplotlib
 - numpy
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) (para execução via container) ou diretamente do WSL2
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (para execução via container) ou diretamente do WSL
 
 ---
 
