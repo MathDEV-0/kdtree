@@ -1,4 +1,5 @@
-Requisitos
+Requisitos:
+
 Python 3.10+
 
 matplotlib
