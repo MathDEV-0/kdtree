@@ -1,6 +1,6 @@
 #%%
 import random
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import time
 
@@ -70,16 +70,24 @@ for n in nKeys:
     speed.append(tests)
 
 speed = np.array(speed)
-np.savetxt(r"C:\Users\User\Downloads\speed.txt", speed, fmt="%.5f", delimiter=',')
+np.savetxt("speed.txt", speed, fmt="%.5f", delimiter=',')
 
-# for i, n in enumerate(nKeys):
-#     for t in speed[i]:
-#         plt.scatter(n, t*1000, color=(0, 0, 0.502), s=5)
+for i, n in enumerate(nKeys):
+    for t in speed[i]:
+        plt.scatter(n, t*1000, color=(0, 0, 0.502), s=5)
 
-# avgSpeed = speed.mean(axis=1)
-# coef = np.polyfit(nKeys, avgSpeed, 2)
-# func = np.poly1d(coef)
-# xFit = np.linspace(min(nKeys), max(nKeys), 100)
-# plt.plot(xFit, func(xFit)*1000, color=(0, 0, 0.502))
+avgSpeed = speed.mean(axis=1)
+coef = np.polyfit(nKeys, avgSpeed, 2)
+func = np.poly1d(coef)
+xFit = np.linspace(min(nKeys), max(nKeys), 100)
+plt.plot(xFit, func(xFit)*1000, color=(0, 0, 0.502))
 
 
+# Título e labels
+plt.title("Tempo de Busca x Tamanho da Entrada")
+plt.xlabel("Quantidade de Entradas")
+plt.ylabel("Tempo de Execução (ms)")
+plt.grid(True)
+
+# Salvar imagem
+plt.savefig("grafico_kdtree.png", dpi=300)
